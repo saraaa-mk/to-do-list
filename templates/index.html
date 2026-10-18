@@ -1,0 +1,41 @@
+<!doctype html>
+<html "lang=en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+        <title>
+            MY TO DO LIST
+        </title>
+    </head>
+    <body>
+        <h1>
+            Welcome to Sarra's To Do List
+        </h1>
+        <form>
+        <input type="text" placeholder="New task...">
+        <button type="submit">Add</button>
+        </form>
+        <ul>
+        <li class="pinned">
+            <span class="task-text">📌 Solve math tools for crypto</span>
+            <div class="actions">
+                <button>Pin</button>
+                <button>Done</button>
+                <button>🗑️</button>
+            </div>
+        </li>
+         <li class="done">
+            <span class="task-text">Clean ur closet</span>
+            <div class="actions">
+                <button>Pin</button>
+                <button>Done</button>
+                <button>🗑️</button>
+            </div>
+        </li>
+        </ul>
+
+
+    </body>
+</html>
