@@ -13,25 +13,24 @@
         <h1>
             Welcome to Sarra's To Do List
         </h1>
-        <input type="text" placeholder="New task...">
+        <form method="post" action="/add">
+        <input required type="text" name="task" placeholder="New task...">
         <button type="submit">Add</button>
+        </form>
+        {% for task in tasks %}
         <ul>
-        <li class="pinned">
-            <span class="task-text">📌 Solve math tools for crypto</span>
+        <li class="{% if task.done %}done{% endif %} {% if task.pinned %}pinned{% endif %}">
+            <span class="task-text">
+            {% if task.pinned %}📌{% endif %}
+            {{ task.text }}
+        </span>
             <div class="actions">
                 <button>Pin</button>
                 <button>Done</button>
                 <button>🗑️</button>
             </div>
         </li>
-         <li class="done">
-            <span class="task-text">Clean ur closet</span>
-            <div class="actions">
-                <button>Pin</button>
-                <button>Done</button>
-                <button>🗑️</button>
-            </div>
-        </li>
+        {% endfor %}
         </ul>
 
 
