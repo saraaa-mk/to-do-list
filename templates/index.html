@@ -25,9 +25,15 @@
             {{ task.text }}
         </span>
             <div class="actions">
-                <button>Pin</button>
-                <button>Done</button>
-                <button>🗑️</button>
+                <form method="post" action="{{ url_for('pin_task', task_id=task.id) }}">
+                    <button type="submit">Pin</button>
+                </form>
+                <form method="post" action="{{ url_for('delete_task', task_id=task.id) }}">
+                    <button>🗑️</button>
+                </form>
+                <form method="post" action="{{ url_for('done_task', task_id=task.id) }}">
+                    <button type="submit">Done</button>
+                </form>
             </div>
         </li>
         {% endfor %}
